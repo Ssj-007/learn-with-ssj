@@ -1,0 +1,98 @@
+.mobileToc {
+  display: none;
+  margin: 1rem 0 1.5rem;
+  border-radius: var(--ifm-global-radius, 10px);
+  border: 1px solid var(--ifm-toc-border-color, #e2e2e2);
+  background: var(--ifm-color-emphasis-50, #f7f7f7);
+  overflow: hidden;
+}
+
+/* Only show on tablet & mobile (where the desktop TOC sidebar is hidden) */
+@media (max-width: 996px) {
+  .mobileToc {
+    display: block;
+  }
+}
+
+.mobileTocToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800, #333);
+  transition: background var(--ssj-transition-fast, 0.2s);
+  min-height: 44px;
+  text-align: left;
+}
+
+.mobileTocToggle:hover {
+  background: var(--ifm-color-emphasis-100, #f0f0f0);
+}
+
+.mobileTocLabel {
+  display: flex;
+  align-items: center;
+}
+
+.mobileTocChevron {
+  display: flex;
+  align-items: center;
+  transition: transform var(--ssj-transition-base, 0.35s);
+  color: var(--ifm-color-emphasis-600, #666);
+}
+
+.mobileTocChevronOpen {
+  transform: rotate(180deg);
+}
+
+.mobileTocList {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0 0.6rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--ssj-transition-slow, 0.5s) ease,
+    padding var(--ssj-transition-base, 0.35s);
+}
+
+.mobileTocListOpen {
+  max-height: 500px;
+  padding: 0.25rem 0 0.6rem;
+}
+
+.mobileTocList li {
+  margin: 0;
+}
+
+.mobileTocLink {
+  display: block;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700, #444);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: color var(--ssj-transition-fast, 0.2s),
+    background var(--ssj-transition-fast, 0.2s),
+    border-color var(--ssj-transition-fast, 0.2s);
+  line-height: 1.4;
+}
+
+.mobileTocLink:hover {
+  color: var(--ifm-color-primary, #0d9488);
+  background: var(--ifm-color-emphasis-100, #f0f0f0);
+  border-left-color: var(--ifm-color-primary, #0d9488);
+  text-decoration: none;
+}
+
+/* Scroll-spy active item */
+.mobileTocLinkActive {
+  color: var(--ifm-color-primary, #0d9488) !important;
+  font-weight: 600;
+  border-left-color: var(--ifm-color-primary, #0d9488) !important;
+}
